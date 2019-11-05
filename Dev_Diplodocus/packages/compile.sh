@@ -91,10 +91,10 @@ curl -o /usr/local/bin/gosu \
 # Compilation of PostgreSQL
 cd src/postgresql-${PG_VERSION}
     ./configure --prefix=/usr/local --with-pgport=5432 --with-python --with-openssl --with-libxml --with-libxslt --with-zlib --with-llvm
-    make -j "$(nproc)"
-    make install
+    make world -j "$(nproc)" 
+    make install-world
     make all
-    make install
+    make install-world
 cd ../..
 ldconfig
 
